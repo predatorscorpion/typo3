@@ -1,0 +1,37 @@
+page = PAGE
+page {
+   10 = FLUIDTEMPLATE
+   10 {
+      templateName = Default
+      templateRootPaths {
+         0 = EXT:typo3_learning/Resources/Private/Templates/Page/
+      }
+      partialRootPaths {
+         0 = EXT:typo3_learning/Resources/Private/Partials/Page/
+      }
+      layoutRootPaths {
+         0 = EXT:typo3_learning/Resources/Private/Layouts/Page/
+      }
+
+      variables {
+         content < styles.content.get
+      }
+   }
+}
+
+page.includeCSS {
+   style = EXT:typo3_learning/Resources/Public/Stylesheets/style.css
+}
+
+lib.contentElement {
+   templateRootPaths {
+      200 = EXT:typo3_learning/Resources/Private/Templates/
+   }
+}
+
+tt_content {
+   typo3learning_jumbotron =< lib.contentElement
+   typo3learning_jumbotron {
+      templateName = Jumbotron
+   }
+}
